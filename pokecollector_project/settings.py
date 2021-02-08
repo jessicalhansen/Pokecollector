@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'main_app',
     'django.contrib.admin',
     'django.contrib.auth',
+    # 'pb_model',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
