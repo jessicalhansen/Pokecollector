@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeCollector - {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <header class="nav-logo">
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper valign-wrapper red darken-1">
+
+                    <a href="{% url 'home' %}" class="left" id="logo">&nbsp;&nbsp;
+                    <img class="img-responsive" src="{% static "img/pokecollector-logoball.png" %}" alt="PokeCollector">
+                    </a>
+                    <div class="main-navlinks">                      
+                        <ul class="navlinks right">
+                        <li><a class="navlink" href="{% url 'home' %}">Home</a></li>
+                        <li><a class="navlink" href="{% url 'about' %}">About</a></li>
+                        <li><a class="navlink" href="{% url 'pokemon_index' %}">View All Pokemon</a></li>
+                        </ul>                      
+                    </div>
+                    
+                </div>
+            </nav>        
+        </div>
+    </header>
+    <main class="container">
+    {% block content %}
+    {% endblock content %}
+    </main>
+    <footer class="page-footer red darken-1">
+        <div class="center">Created by <a href="https://github.com/jessicalhansen">Jessica Hansen</a> for SEI-1207 Project 2 for non-commercial use.</div>
+    </footer>
+</body>
+</html>
