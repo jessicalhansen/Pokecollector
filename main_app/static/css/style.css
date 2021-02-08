@@ -1,22 +1,22 @@
 /* Base.html styling */
 
 .img-responsive {
-    max-height: 12vh;
-    margin-top: 25px;
-    border-radius: 8px;
+    max-height: 8vw;
+    margin-top: .5vw;
+    border-radius: 5px;
 }
 
 header .navbar-fixed {
-    height: 14vh;
+    height: 9vw;
 }
 
 header .navbar-fixed .nav-wrapper {
-    height: 14.3vh;
+    height: 9vw;
 }
 
 .navlink {
-    /* margin-top: 3.5vh; */
-    font-size: 3vh;
+    margin-top: 2vw;
+    font-size: 2.5vw;
 }
 
 body {
@@ -25,10 +25,13 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     font-family: 'Bubblegum Sans', cursive;
+    margin: 0;
     }
   
 main {
     flex: 1 0 auto;
+    background-color: aquamarine;
+    margin-left: 0;
     }
   
 form {
@@ -53,10 +56,30 @@ footer {
 
 .stretch-logo {
     width: 100vw;
-    height: 62vh;
+    height: 60vh;
     background-image: url(../img/pokecollector-stretch.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: contain;
     background-position: bottom;
-    margin-left: -15vw;
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .stretch-logo {
+        margin-left: -7.5vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .stretch-logo {
+        margin-left: -3vw;
+        height: 40vh;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .stretch-logo {
+        margin-left: -15vw;
+    }
 }
