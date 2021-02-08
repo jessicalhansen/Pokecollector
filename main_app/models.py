@@ -10,10 +10,8 @@ class NameField(models.CharField):
     def get_prep_value(self, value):
         return str(value).lower()
 
-
-
 class Pokemon(models.Model):
-    name = NameField(max_length=100)
+    name = models.CharField(max_length=100)
     pokedex_id = models.IntegerField(blank=True)
     type = models.CharField(
         max_length=100,
@@ -27,6 +25,9 @@ class Pokemon(models.Model):
         max_length=250,
         blank=True
     )
+
+
+
 # def fetch_pokemon():
 #     name = input('Which Pokemon do you want? ')
 #     print("Fetching " + name)

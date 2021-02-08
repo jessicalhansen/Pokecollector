@@ -26,6 +26,10 @@ body {
     justify-content: flex-start;
     font-family: 'Bubblegum Sans', cursive;
     margin: 0;
+    background-image: url(../img/pokecollector-stretch.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom 5.2vh center;
     }
   
 main {
@@ -44,40 +48,51 @@ footer {
 
 /* HOME Style */
 
-/* .home-logo {
-    display: flex;
-    width: 85vw;
-    height: 50vh;
-    background-color: red;
-    align-items: flex-end;
+.button-area {
+    display: grid;
+    height: 100%;
+    place-items: center;
+}
+
+#enter-button {
+    font-size: 15vw;
+    font-weight: bold;
+    color: #FFCC00;
+    text-shadow: -5px -5px 0 #386bbb, 
+                  5px -5px 0 #386bbb, 
+                  5px 5px 0 #386bbb;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family: 'Bubblegum Sans', cursive;
+    margin-top: 4vh;
+    
+}
+
+#enter-button a {
+  color: #FFCC00;
+}
+
+button:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+button:active {
+  transform: translateY(4px);
+}
+
+/* Index / Show All styling */
+
+.card {
+    max-width: 15vw;
+    padding: 0 2vw 0 2vw;
+}
+/* .card-image img {
+    height: 8vw !important;
 } */
 
-.stretch-logo {
-    width: 100vw;
-    height: 60vh;
-    background-image: url(../img/pokecollector-stretch.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-}
-
-
-
-@media screen and (max-width: 980px) {
-    .stretch-logo {
-        margin-left: -7.5vw;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .stretch-logo {
-        margin-left: -3vw;
-        height: 40vh;
-    }
-}
-
-@media screen and (min-width: 980px) {
-    .stretch-logo {
-        margin-left: -15vw;
-    }
+.card-content {
+    font-size: 1.3vw;
 }
