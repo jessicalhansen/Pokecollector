@@ -1,5 +1,5 @@
 from django import forms
-from .models import Battles, Pokemon
+from .models import Pokemon
 
 
 # class 

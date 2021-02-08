@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .models import Pokemon
 
 
 # Create your views here.
@@ -14,4 +15,5 @@ def about(request):
 
 
 def pokemon_index(request):
-    return render(request, 'pokemon/index.html')
+    pokemon = Pokemon.objects.all()
+    return render(request, 'pokemon/index.html', { 'pokemon': pokemon })
