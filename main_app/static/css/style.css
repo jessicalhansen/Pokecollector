@@ -85,44 +85,22 @@ button:active {
 
 /* Index / Show All styling */
 
-.card {
-    width: 18em;
-    margin: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-.pokemon-area-main {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.pokemon-area {
-    display: inline;
-    flex-direction: row;
-    margin: 20px;
-}
 
 .card-image img {
-    height: 150px !important;
+    height: 50px !important;
     width: auto !important;
     margin: 0;
 }
 
-.card-image {
+/* .card-image {
     display: flex;
     justify-content: center;
-}
+} */
 
 .card-content {
     font-size: 1.3vw;
 }
 
-
-.detail-card {
-    display: inline-flex;
-}
 
 .battle-form,
 .battle-table,

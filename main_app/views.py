@@ -23,7 +23,7 @@ def pokemon_index(request):
             new_pokemon.save()
 
     pokemon = Pokemon.objects.all()
-    pokemon_form = PokemonForm()
+    # pokemon_form = PokemonForm()
 
     return render(request, 'pokemon/index.html', { 'pokemon': pokemon })
 

@@ -7,11 +7,17 @@
 {% block content %}
 <h1 class="center">All Pokémon</h1>
 
-    
+<div>
+  <form action="{% url 'pokemon_index' %}" method="POST">
+    {% csrf_token %}
+    {{ pokemon_form.as_p }}
+    <input type="submit" class="btn orange lighten-3" value="Add Pokemon">
+  </form>
+</div>  
 
     {% for pokemon in pokemon %}
-      <div class="pokemon-area-main">
-        <div class="pokemon-area">
+      <div class="row">
+        <div class="col s6">
           <div class="card">
             <a href="{% url 'pokemon_detail' pokemon.id %}">
               <div class="card-image">
@@ -25,18 +31,11 @@
                         <p>Description: {{ pokemon.description }}</p>
                       </div>
                     </a>
-                  {% endfor %}
+      {% endfor %}
               </div>
-              
           </div>
         </div>
 
-            <div>
-                <form action="{% url 'pokemon_index' %}" method="POST">
-                  {% csrf_token %}
-                  {{ pokemon_form.as_p }}
-                  <input type="submit" class="btn orange lighten-3" value="Add Pokemon">
-                </form>
-              </div>
+            
 
 {% endblock content %}

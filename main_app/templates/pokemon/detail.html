@@ -17,7 +17,7 @@
                     <p>Description: {{ pokemon.description }}</p>
                 </div>
                 <div class="card-action">
-                    <button class="btn green darken-1">
+                    <button class="btn green">
                     <a href="{% url 'edit_pokemon' pokemon.id %}">Edit</a>
                     </button>
                     <form action="{% url 'delete_pokemon' pokemon.id %}" method="POST">
