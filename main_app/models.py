@@ -35,7 +35,7 @@ RESULTS = (
     ('W', 'Win')
 )
 class Battle(models.Model):
-    date = models.DateField()
+    date = models.DateField('battle date')
     result = models.CharField(
         max_length=1,
         choices=RESULTS,

@@ -119,16 +119,22 @@ button:active {
     font-size: 1.3vw;
 }
 
-.battle-form-area {
-    display: block;
+
+.detail-card {
+    display: inline-flex;
 }
+
 .battle-form,
 .battle-table,
 .battle-form-area {
-    width: 600px;
-    font-size: 1.2em;
+    width: 42vw;
+    font-size: 1.1em;
 }
 
-.spread {
-    display: flex;
+.battle-form {
+    display: inline-flex;
+}
+
+.addbattle {
+    margin: 8px 8px 0 0;
 }

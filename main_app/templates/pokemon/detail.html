@@ -3,9 +3,9 @@
 
 <h1>{{ pokemon.name }} details:</h1>
 
-    <div class="spread">
-        <div class="col s6">
-            <div class="card">
+    <div class="pokemon-area-main">
+        <div class="pokemon-area">
+            <div class="detail-card card">
                 <div class="card-image">
                 <img src="/static/img/pokemon/{{ pokemon.pokedex_id }}.png">
                 </div>
@@ -18,20 +18,21 @@
                 </div>
                 <div class="card-action">
                     <button class="btn green darken-1">
-                    <a href="">Edit</a>
+                    <a href="{% url 'edit_pokemon' pokemon.id %}">Edit</a>
                     </button>
                     <button class="btn deep-orange darken-2">
-                    <a href="">Release</a>
+                    <a href="{% url 'delete_pokemon' pokemon.id %}">Release</a>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="battle-form-area amber lighten-4">
+    <div class="battle-form-area orange lighten-4">
         <form method="POST" action="{% url 'add_battle' pokemon.id %}" class="battle-form">
             {% csrf_token %}
             {{ battle_form.as_p }}
-            <input type="submit" value="Add Battle" class="btn orange lighten-2">
+        
+            <input type="submit" value="Add Battle" class="addbattle btn orange lighten-2">
         </form>
 
         <table class="battle-table striped">
@@ -64,7 +65,7 @@
     autoClose: true
   });
 
-  const selectEl = document.getElementById('id_meal');
+  const selectEl = document.getElementById('id_result');
   M.FormSelect.init(selectEl);
 </script>
 
