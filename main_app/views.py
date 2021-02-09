@@ -21,4 +21,18 @@ def pokemon_index(request):
 def pokemon_detail(request, pokemon_id):
     pokemon = Pokemon.objects.get(id=pokemon_id)
     battle_form = BattleForm()
-    return render(request, 'pokemon/detail.html', { 'pokemon': pokemon, 'battle_form': battle_form })
+
+    context = {
+        'pokemon': pokemon,
+        'battle_form': battle_form,
+    }
+    return render(request, 'pokemon/detail.html', context)
+
+def add_battle(request, pokemon_id):
+    form = BattleForm(request.POST)
+
+    if form.is_valid():
+        new_battle = form.save(commit=False)
+        new_battle.pokemon_id = pokemon_id
+        new_battle.save()
+    return redirect('pokemon_detail', pokemon_id=pokemon_id)

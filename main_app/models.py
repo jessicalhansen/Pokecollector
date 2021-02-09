@@ -30,22 +30,22 @@ class Pokemon(models.Model):
         return self.name
     
 
-OUTCOMES = (
+RESULTS = (
     ('L', 'Loss'),
     ('W', 'Win')
 )
 class Battle(models.Model):
     date = models.DateField()
-    outcome = models.CharField(
+    result = models.CharField(
         max_length=1,
-        choices=OUTCOMES,
-        default=OUTCOMES[0][0]
-    ),
+        choices=RESULTS,
+        default=RESULTS[0][0]
+    )
     opponent = models.CharField(max_length=100)
     pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return f'{self.get_OUTCOME_display()} on {self.date}'
+    def __str__(self):
+        return f'{self.get_result_display()} on {self.date}'
     
 
 

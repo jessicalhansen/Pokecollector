@@ -3,7 +3,7 @@
 
 <h1>{{ pokemon.name }} details:</h1>
 
-    <div class="row">
+    <div class="spread">
         <div class="col s6">
             <div class="card">
                 <div class="card-image">
@@ -20,25 +20,26 @@
                     <button class="btn green darken-1">
                     <a href="">Edit</a>
                     </button>
-                    <button class="btn deep-orange darken-4">
+                    <button class="btn deep-orange darken-2">
                     <a href="">Release</a>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col s6">
-        <form method="POST">
+    <div class="battle-form-area amber lighten-4">
+        <form method="POST" action="{% url 'add_battle' pokemon.id %}" class="battle-form">
             {% csrf_token %}
             {{ battle_form.as_p }}
             <input type="submit" value="Add Battle" class="btn orange lighten-2">
         </form>
 
-        <table class="striped">
+        <table class="battle-table striped">
             <thead>
                 <tr>
                     <th>Date:</th>
                     <th>Outcome:</th>
+                    <th>Opponent:</th>
                 </tr>
             </thead>
 
@@ -46,12 +47,25 @@
                 {% for battle in pokemon.battle_set.all  %}
                     <tr>
                         <td>{{ battle.date }}</td>
-                        {% comment %} <td>{{ battle.get_choices_display }}</td> {% endcomment %}
+                        <td>{{ battle.get_result_display }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
 
     </div>
+
+<script>
+    const dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+
+  const selectEl = document.getElementById('id_meal');
+  M.FormSelect.init(selectEl);
+</script>
 
 {% endblock content %}

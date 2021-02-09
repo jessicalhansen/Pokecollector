@@ -1,7 +1,7 @@
 from django import forms
-from .models import Battle
+from .models import Battle, Pokemon
 
 class BattleForm(forms.ModelForm):
     class Meta:
         model = Battle
-        fields = ['date', 'outcomes', 'opponent']
+        fields = ['date', 'result', 'opponent']

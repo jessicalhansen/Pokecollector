@@ -86,7 +86,7 @@ button:active {
 /* Index / Show All styling */
 
 .card {
-    width: 20vh;
+    width: 18em;
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -117,4 +117,18 @@ button:active {
 
 .card-content {
     font-size: 1.3vw;
+}
+
+.battle-form-area {
+    display: block;
+}
+.battle-form,
+.battle-table,
+.battle-form-area {
+    width: 600px;
+    font-size: 1.2em;
+}
+
+.spread {
+    display: flex;
 }
