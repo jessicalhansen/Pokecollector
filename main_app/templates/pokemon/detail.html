@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title center">{{ pokemon.name }}</span> 
-                    <p>Pokedex #{{ pokemon.pokedex_id }}</p>
+                    <p>Pokédex #{{ pokemon.pokedex_id }}</p>
                     <p>Type: {{ pokemon.type }}</p>
                     <p>Color: {{ pokemon.color }}</p>
                     <p>Description: {{ pokemon.description }}</p>
@@ -20,9 +20,10 @@
                     <button class="btn green darken-1">
                     <a href="{% url 'edit_pokemon' pokemon.id %}">Edit</a>
                     </button>
-                    <button class="btn deep-orange darken-2">
-                    <a href="{% url 'delete_pokemon' pokemon.id %}">Release</a>
-                    </button>
+                    <form action="{% url 'delete_pokemon' pokemon.id %}" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" class="btn orange lighten-3" value="Release">
+                    </form>
                 </div>
             </div>
         </div>

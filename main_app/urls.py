@@ -10,4 +10,5 @@ urlpatterns = [
 
     path('pokemon/<int:pokemon_id>/delete/', views.delete_pokemon, name='delete_pokemon'),
     path('pokemon/<int:pokemon_id>/edit/', views.edit_pokemon, name='edit_pokemon'),
+    
 ]

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Pokemon
-from .forms import BattleForm
+from .forms import BattleForm, PokemonForm
 
 # Create your views here.
 
@@ -15,7 +15,16 @@ def about(request):
 
 
 def pokemon_index(request):
+    if request.method == 'POST':
+        pokemon_form = PokemonForm(request.POST)
+
+        if pokemon_form.is_valid():
+            new_pokemon = pokemon_form.save()
+            new_pokemon.save()
+
     pokemon = Pokemon.objects.all()
+    pokemon_form = PokemonForm()
+
     return render(request, 'pokemon/index.html', { 'pokemon': pokemon })
 
 def pokemon_detail(request, pokemon_id):
@@ -38,7 +47,7 @@ def edit_pokemon(request, pokemon_id):
     pokemon = Pokemon.objects.get(id=pokemon_id)
 
     if request.method == 'GET':
-        pokemon_form = PokemonForm(id=pokemon_id)
+        pokemon_form = PokemonForm(instance=pokemon)
         context = {'form': pokemon_form}
         return render(request, 'pokemon/edit.html', context)
     else:

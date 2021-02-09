@@ -19,18 +19,24 @@
                   </div>
                     <div class="card-content">
                       <span class="card-title center">{{ pokemon.name }}</span> 
-                        <p>Pokedex #{{ pokemon.pokedex_id }}</p>
+                        <p>Pokédex #{{ pokemon.pokedex_id }}</p>
                         <p>Type: {{ pokemon.type }}</p>
                         <p>Color: {{ pokemon.color }}</p>
                         <p>Description: {{ pokemon.description }}</p>
                       </div>
                     </a>
+                  {% endfor %}
               </div>
+              
           </div>
         </div>
 
-
-{% endfor %}
-
+            <div>
+                <form action="{% url 'pokemon_index' %}" method="POST">
+                  {% csrf_token %}
+                  {{ pokemon_form.as_p }}
+                  <input type="submit" class="btn orange lighten-3" value="Add Pokemon">
+                </form>
+              </div>
 
 {% endblock content %}
