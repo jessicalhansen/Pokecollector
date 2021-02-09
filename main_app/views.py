@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Pokemon
-
+from .forms import BattleForm
 
 # Create your views here.
 
@@ -20,4 +20,5 @@ def pokemon_index(request):
 
 def pokemon_detail(request, pokemon_id):
     pokemon = Pokemon.objects.get(id=pokemon_id)
-    return render(request, 'pokemon/detail.html', { 'pokemon': pokemon })
+    battle_form = BattleForm()
+    return render(request, 'pokemon/detail.html', { 'pokemon': pokemon, 'battle_form': battle_form })
